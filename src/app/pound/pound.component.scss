@@ -1,0 +1,30 @@
+.pound {
+  min-height: 25rem;
+  background: linear-gradient(to right, #009688, #03a9f4);
+  position: relative;
+  margin-top: 3rem;
+  cursor: url("../../assets/hook.png"), auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -3px;
+    right: 0;
+    background-repeat: repeat;
+    height: 10px;
+    background-size: 20px 20px;
+    background-image: radial-gradient(circle at 10px -5px, transparent 12px, aquamarine 13px);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -9px;
+    right: 0;
+    background-repeat: repeat;
+    height: 15px;
+    background-size: 40px 20px;
+    background-image: radial-gradient(circle at 10px 15px, aquamarine 12px, transparent 13px);
+  }
+}

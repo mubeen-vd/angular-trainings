@@ -1,0 +1,15 @@
+img {
+  width: 14rem;
+  height: auto;
+}
+
+.swim {
+  position: absolute;
+  top: 0;
+  left: 0em;
+  transition: width 2s;
+}
+
+.r2l {
+  transform: rotate3d(0, 180, 0, 180deg);
+}

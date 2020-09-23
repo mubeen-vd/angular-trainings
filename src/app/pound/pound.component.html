@@ -1,0 +1,48 @@
+<div #pound class="pound">
+  <app-fish *ngFor="let fish of fishes; index as i;"
+    [id]="fishes[i].id"
+    [depth]="fishes[i].depth"
+    [src]="fishes[i].src"
+    [speed]="fishes[i].speed"
+    [name]="fishes[i].name"
+    [isSwimming]="fishes[i].swimming"
+    [isL2R]="fishes[i].l2r"
+    (click)="catchFish(i)"
+    (viewUpdated)="fishViewUpdated($event)"
+  ></app-fish>
+</div>
+
+<div>
+  <table
+    class="responsive-table responsive-table-input-matrix"
+    style="width: 100%"
+  >
+    <caption>
+      Monthly savings
+    </caption>
+    <tr>
+      <th scope="col">Fish Name</th>
+      <th scope="col">start</th>
+      <th scope="col">stop</th>
+      <th scope="col">Cur Speed</th>
+      <th scope="col">Speed +</th>
+      <th scope="col">Speed -</th>
+    </tr>
+    <tr *ngFor="let fish of fishes; index as i;">
+      <td>
+        <img
+          [src]="'../../assets/' + fishes[i].src"
+          [alt]="fishes[i].name"
+          width="50"
+        />
+      </td>
+      <td><button (click)="start(i)">start</button></td>
+      <td><button (click)="stop(i)">stop</button></td>
+      <td>
+        {{ fishes[i].speed }}
+      </td>
+      <td><button (click)="incSpeed(i)">+</button></td>
+      <td><button (click)="decSpeed(i)">-</button></td>
+    </tr>
+  </table>
+</div>
